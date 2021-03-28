@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import AttractionsList from './AttractionsList'
+import AttractionDetail from './AttractionDetail'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import axios from './api/axios'
+import requests from './api/requests'
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [attractions, setAttractions] = useState([])
+  const [pageNow, setPageNow] = useState(1)
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(requests.fetchAllAttractions, {
+        params: {
+          page: pageNow,
+        },
+      })
+      setAttractions(response.data.data)
+      console.log(response.data)
+    }
+    fetchData()
+  }, [pageNow])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <AttractionsList attractions={attractions} setPageNow={setPageNow} />
+        </Route>
+        <Route path="/:id">
+          <AttractionDetail
+            attractions={attractions}
+            setAttractions={setAttractions}
+          />
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+export default App
