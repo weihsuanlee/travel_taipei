@@ -1,17 +1,7 @@
-// .banner {
-//   margin-left: -24px;
-//   margin-right: -24px;
-//   overflow: hidden;
-//   max-height: 80vh;
-//   margin-bottom: 36px;
-//   img {
-//     width: 100%;
-//   }
-// }
 .banner {
   margin-left: -24px;
   margin-right: -24px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   position: relative;
   object-fit: contain;
   height: 70vh;
@@ -27,7 +17,7 @@
   left: 10%;
 }
 .banner-title {
-  font-size: 3rem;
+  font-size: 36px;
   font-weight: 700;
   display: flex;
   align-items: center;
