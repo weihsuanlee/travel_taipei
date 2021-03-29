@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from './api/axios'
 import requests from './api/requests'
 import { withRouter, useParams } from 'react-router-dom'
+import './AttractionDetail.scss'
 
 function AttractionDetail(props) {
   const [spot, setSpot] = useState([])
@@ -11,6 +12,7 @@ function AttractionDetail(props) {
     async function fetchData() {
       const response = await axios.get(requests.fetchAllAttractions)
       setAttractions(response.data.data)
+      return response
     }
     fetchData()
     const index = attractions.findIndex((el) => el.id === 1554)

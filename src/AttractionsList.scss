@@ -1,0 +1,9 @@
+.attractions-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+// .attractions-list::after {
+//   content: '';
+//   flex: auto;
+// }

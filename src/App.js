@@ -18,9 +18,11 @@ function App() {
       })
       setAttractions(response.data.data)
       console.log(response.data)
+      return response
     }
     fetchData()
   }, [pageNow])
+
   return (
     <Router>
       <Switch>
