@@ -71,6 +71,30 @@ function Category() {
             }}
           />
           <Tab
+            label="宗教信仰"
+            onClick={() => {
+              handleClick(14)
+            }}
+          />
+          <Tab
+            label="主題商街"
+            onClick={() => {
+              handleClick(24)
+            }}
+          />
+          <Tab
+            label="北北基景點"
+            onClick={() => {
+              handleClick(20)
+            }}
+          />
+          <Tab
+            label="單車遊蹤"
+            onClick={() => {
+              handleClick(12)
+            }}
+          />
+          <Tab
             label="無障礙旅遊"
             onClick={() => {
               handleClick(25)

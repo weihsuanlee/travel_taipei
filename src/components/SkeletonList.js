@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 function SkeletionList() {
   const classes = useStyles()
   let list = []
-  for (let i = 0; i < 31; i++) {
+  for (let i = 0; i < 30; i++) {
     list.push(
       <Card className={classes.card}>
         <Skeleton animation="wave" variant="rect" className={classes.media} />
