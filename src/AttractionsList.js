@@ -12,6 +12,7 @@ import SkeletonList from './components/SkeletonList'
 import BasicPagination from './components/BasicPagination'
 import Container from '@material-ui/core/Container'
 import './AttractionsList.scss'
+import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 
 function AttractionsList() {
   const [attractions, setAttractions] = useState([])
@@ -32,19 +33,18 @@ function AttractionsList() {
       setAttractions(response.data.data)
       setTotalPage(Math.ceil(response.data.total / 30))
       console.log(response.data)
-      console.log(response.data)
       return response
     }
     fetchData()
     setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, 2500)
   }, [page, categoryId])
 
   return (
     <>
       <Container maxWidth={false} className="attractions-list-container">
-        <Banner />
+        <Banner Icon={LocationOnRoundedIcon} title="Taipei" />
         <Category />
         <div className="attractions-list">
           {isLoading ? (

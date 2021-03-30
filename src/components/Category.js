@@ -16,6 +16,14 @@ function Category() {
     dispatch(changeCateoryId(categoryId))
     dispatch(changePageNow(1))
   }
+  const TabItem = (label, categoryId) => (
+    <Tab
+      label={label}
+      onClick={() => {
+        handleClick(categoryId)
+      }}
+    />
+  )
   return (
     <div className="category-btns">
       <AppBar position="static" color="default">
@@ -28,78 +36,14 @@ function Category() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab
-            label="全部景點"
-            onClick={() => {
-              handleClick(0)
-            }}
-          />
-          <Tab
-            label="藝文場館"
-            onClick={() => {
-              handleClick(15)
-            }}
-          />
-          <Tab
-            label="戶外踏青"
-            onClick={() => {
-              handleClick(16)
-            }}
-          />
-          <Tab
-            label="親子共遊"
-            onClick={() => {
-              handleClick(19)
-            }}
-          />
-          <Tab
-            label="歷史建築"
-            onClick={() => {
-              handleClick(13)
-            }}
-          />
-          <Tab
-            label="夜市商圈"
-            onClick={() => {
-              handleClick(23)
-            }}
-          />
-          <Tab
-            label="公共藝術"
-            onClick={() => {
-              handleClick(18)
-            }}
-          />
-          <Tab
-            label="宗教信仰"
-            onClick={() => {
-              handleClick(14)
-            }}
-          />
-          <Tab
-            label="主題商街"
-            onClick={() => {
-              handleClick(24)
-            }}
-          />
-          <Tab
-            label="北北基景點"
-            onClick={() => {
-              handleClick(20)
-            }}
-          />
-          <Tab
-            label="單車遊蹤"
-            onClick={() => {
-              handleClick(12)
-            }}
-          />
-          <Tab
-            label="無障礙旅遊"
-            onClick={() => {
-              handleClick(25)
-            }}
-          />
+          {TabItem('全部景點', 0)}
+          {TabItem('藝文場館', 15)}
+          {TabItem('戶外踏青', 16)}
+          {TabItem('親子共遊', 19)}
+          {TabItem('歷史建築', 13)}
+          {TabItem('夜市商圈', 23)}
+          {TabItem('主題商街', 24)}
+          {TabItem('無障礙旅遊', 25)}
         </Tabs>
       </AppBar>
     </div>

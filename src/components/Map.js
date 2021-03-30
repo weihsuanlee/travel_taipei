@@ -1,19 +1,27 @@
 import React from 'react'
-import { MapContainer, TileLayer, useMap, Popup, Marker } from 'react-leaflet'
+import {
+  MapContainer,
+  TileLayer,
+  useMap,
+  Popup,
+  Marker,
+  Tooltip,
+} from 'react-leaflet'
+import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
+import PhoneRoundedIcon from '@material-ui/icons/PhoneRounded'
 import './Map.scss'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-
-import icon from 'leaflet/dist/images/marker-icon.png'
-import iconShadow from 'leaflet/dist/images/marker-shadow.png'
+import { withRouter } from 'react-router-dom'
 
 function Map(props) {
-  let DefaultIcon = L.icon({
-    iconUrl: icon,
-    shadowUrl: iconShadow,
+  let myIcon = L.icon({
+    iconUrl: '../../images/icon.png',
+    iconSize: [24, 24],
+    popupAnchor: [0, 0],
   })
 
-  L.Marker.prototype.options.icon = DefaultIcon
+  L.Marker.prototype.options.icon = myIcon
   const { attractions } = props
 
   return (
@@ -33,8 +41,56 @@ function Map(props) {
             key={attraction.id}
             position={[attraction.nlat, attraction.elong]}
           >
-            <Popup>
-              <div className="info">{attraction.name}</div>
+            <Tooltip
+              direction="top"
+              offset={[0, -5]}
+              className="tooltip"
+              permanent
+            >
+              <img
+                className="tooltip-image"
+                src={
+                  attraction.images[0]
+                    ? attraction.images[0].src
+                    : '../../images/notfound.jpeg'
+                }
+                alt=""
+              />
+            </Tooltip>
+            <Popup className="popup" closeButton={false} direction="top">
+              <div className="popup-info">
+                {attraction.name.split('_').join(' ')}
+              </div>
+              <div className="popup-image">
+                <img
+                  src={
+                    attraction.images[0]
+                      ? attraction.images[0].src
+                      : '../../images/notfound.jpeg'
+                  }
+                  alt=""
+                />
+              </div>
+              <p className="popup-address">
+                <LocationOnRoundedIcon />
+                <span>{attraction.address}</span>
+              </p>
+              {attraction.tel ? (
+                <p className="popup-address">
+                  <PhoneRoundedIcon />
+                  <span>{attraction.tel}</span>
+                </p>
+              ) : (
+                ''
+              )}
+              <div
+                className="popup-link"
+                onClick={() => {
+                  props.history.push('/' + attraction.id)
+                }}
+              >
+                詳細內容
+              </div>
             </Popup>
           </Marker>
         ))}
@@ -43,4 +99,4 @@ function Map(props) {
   )
 }
 
-export default Map
+export default withRouter(Map)

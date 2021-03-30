@@ -1,0 +1,42 @@
+.location {
+  height: 328px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 100%;
+  //   box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+.location-tooltip.leaflet-tooltip {
+  box-shadow: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+.location-info {
+  font-size: 14px;
+  font-weight: 600;
+}
+.location-flex {
+  display: flex;
+  margin-top: 8px;
+}
+.location-image {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+.location-align {
+  margin: auto 0;
+}
+.location-address {
+  font-size: 12px;
+  color: #9b9b9b;
+  overflow: hidden;
+  display: flex;
+  .MuiSvgIcon-root {
+    font-size: 12px;
+    margin-right: 4px;
+    transform: translateY(2px);
+  }
+}

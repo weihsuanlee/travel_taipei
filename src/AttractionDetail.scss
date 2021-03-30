@@ -1,0 +1,34 @@
+.to-list-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 36px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 14px;
+  }
+  .MuiSvgIcon-root {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+}
+.detail-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+.detail-left,
+.detail-right {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .detail-left {
+    max-width: 60%;
+  }
+  .detail-right {
+    max-width: 40%;
+  }
+}
