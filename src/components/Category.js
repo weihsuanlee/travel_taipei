@@ -19,6 +19,7 @@ function Category() {
   const TabItem = (label, categoryId) => (
     <Tab
       label={label}
+      // id={`category${categoryId}`}
       onClick={() => {
         handleClick(categoryId)
       }}
@@ -43,7 +44,10 @@ function Category() {
           {TabItem('歷史建築', 13)}
           {TabItem('夜市商圈', 23)}
           {TabItem('主題商街', 24)}
+          {TabItem('宗教信仰', 14)}
           {TabItem('無障礙旅遊', 25)}
+          {TabItem('北北基景點', 20)}
+          {TabItem('單車遊蹤', 12)}
         </Tabs>
       </AppBar>
     </div>

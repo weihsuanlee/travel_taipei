@@ -25,7 +25,7 @@ function SkeletionList() {
   let list = []
   for (let i = 0; i < 30; i++) {
     list.push(
-      <Card className={classes.card}>
+      <Card className={classes.card} key={i}>
         <Skeleton animation="wave" variant="rect" className={classes.media} />
         <CardContent className={classes.body}>
           <Skeleton

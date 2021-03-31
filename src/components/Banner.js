@@ -1,5 +1,4 @@
 import './Banner.scss'
-import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 
 function Banner(props) {
   const { title, bannerInfo, Icon } = props
@@ -23,10 +22,6 @@ function Banner(props) {
               <Icon />
               {bannerInfo.name.split('_').join(' ')}
             </h1>
-            <p className="location-address">
-              <LocationOnRoundedIcon />
-              <span>{bannerInfo.address}</span>
-            </p>
           </div>
           <div className="banner-fade-bottom"></div>
         </div>
