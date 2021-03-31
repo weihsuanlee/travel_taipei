@@ -1,3 +1,18 @@
 .detail-info {
   white-space: pre-line;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 8px 20px;
+}
+
+.detail-info-title {
+  padding: 16px 0 8px 0;
+  font-weight: 500;
+}
+.detail-intro {
+  margin-bottom: 20px;
+  p {
+    font-size: 14px;
+  }
 }

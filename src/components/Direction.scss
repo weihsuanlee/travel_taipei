@@ -1,4 +1,54 @@
 .direction {
-  padding: 20px;
+  padding: 24px 20px;
   white-space: pre-line;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  margin: 20px 0;
+}
+.direction-align {
+  margin: auto 0;
+}
+.direction-address {
+  font-weight: 500;
+  font-size: 14px;
+  color: #222327;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 10px;
+  .MuiSvgIcon-root {
+    font-size: 14px;
+    margin-right: 12px;
+    transform: translateY(2px);
+  }
+}
+.direction-title {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.open-hours,
+.ticket-info,
+.official-link,
+.facebook-link {
+  margin-top: 32px;
+  span {
+    font-size: 14px;
+  }
+}
+.direction-links {
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  padding: 8px;
+  transition: 0.3s;
+  border-radius: 4px;
+  &:hover {
+    background-color: rgb(248, 248, 248);
+  }
+}
+.direction-icon.MuiSvgIcon-root {
+  margin-right: 8px;
+  font-size: 14px;
 }

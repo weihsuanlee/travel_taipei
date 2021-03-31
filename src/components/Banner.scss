@@ -1,7 +1,6 @@
 .banner {
   margin-left: -24px;
   margin-right: -24px;
-  margin-bottom: 20px;
   position: relative;
   object-fit: contain;
   height: 70vh;
@@ -12,9 +11,9 @@
 .banner-contents {
   color: #222327;
   position: absolute;
-  z-index: 1;
   bottom: 3rem;
   left: 10%;
+  z-index: 1;
 }
 .banner-title {
   font-size: 36px;

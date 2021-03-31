@@ -1,0 +1,42 @@
+.recommendations {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 8px 0;
+}
+.recommendation-title {
+  padding: 16px 20px 12px 20px;
+  font-weight: 500;
+}
+.recommendation {
+  display: flex;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 255, 255);
+  &:hover {
+    background-color: rgb(248, 248, 248);
+  }
+}
+.recommendation-image {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+.recommendation-address {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #9b9b9b;
+  overflow: hidden;
+  display: flex;
+  .MuiSvgIcon-root {
+    font-size: 12px;
+    margin-right: 4px;
+    transform: translateY(2px);
+  }
+}
+.recommendation-align {
+  margin: auto 0;
+}
