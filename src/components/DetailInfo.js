@@ -4,11 +4,22 @@ function DetailInfo(props) {
   return (
     <>
       <div className="detail-info">
-        <h5>{attraction.introduction}</h5>
-        <h5>{attraction.official_site}</h5>
-        <h5>{attraction.facebook}</h5>
-        <h5>{attraction.ticket}</h5>
-        <h5>{attraction.remind}</h5>
+        {attraction.introduction && (
+          <>
+            <div className="detail-info-title">詳細資訊</div>
+            <div className="detail-intro">
+              <p>{attraction.introduction}</p>
+            </div>
+          </>
+        )}
+        {attraction.remind && (
+          <>
+            <div className="detail-info-title">備註</div>
+            <div className="detail-intro">
+              <p>{attraction.remind ? attraction.remind : ''}</p>
+            </div>
+          </>
+        )}
       </div>
     </>
   )

@@ -1,4 +1,3 @@
-import React from 'react'
 import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 import PhoneRoundedIcon from '@material-ui/icons/PhoneRounded'
@@ -43,7 +42,7 @@ function Location(props) {
               <img
                 className="location-image"
                 src={
-                  attraction.images[0]
+                  attraction?.images[0]
                     ? attraction.images[0].src
                     : '../../images/notfound.jpeg'
                 }

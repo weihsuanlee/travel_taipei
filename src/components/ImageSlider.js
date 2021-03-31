@@ -13,9 +13,10 @@ function ImageSlider(props) {
     slidesToShow: 1,
     slidesToScroll: 1,
   }
+  // console.log(images)
   return (
     <div className="detail-slider-wrapper">
-      {images.length > 0 && (
+      {images?.length > 0 && (
         <Slider {...settings} className="detail-slider">
           {images.map((v, i) => (
             <div className="detail-slider-image" key={i}>
