@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Banner from './components/Banner'
 import ImageSlider from './components/ImageSlider'
+import SkeletonDetail from './components/SkeletonDetail'
 import Features from './components/Features'
 import DetailInfo from './components/DetailInfo'
 import Location from './components/Location'
@@ -11,8 +12,8 @@ import Container from '@material-ui/core/Container'
 import KeyboardBackspaceSharpIcon from '@material-ui/icons/KeyboardBackspaceSharp'
 import './AttractionDetail.scss'
 import { useSelector } from 'react-redux'
-import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 import { selectAllAttractions } from './features/attractionsSlice'
+import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 
 function AttractionDetail(props) {
   const [spot, setSpot] = useState([])
@@ -21,6 +22,7 @@ function AttractionDetail(props) {
   const attractions = useSelector(selectAllAttractions)
   console.log(id)
   let idNotFound = true
+
   useEffect(() => {
     setIsLoading(true)
     for (let i = 0; i < attractions.length; i++) {
@@ -42,10 +44,10 @@ function AttractionDetail(props) {
   return (
     <>
       {isLoading ? (
-        '123'
+        <SkeletonDetail />
       ) : (
         <Container maxWidth={false} className="attractions-list-container">
-          <Banner Icon={LocationOnRoundedIcon} bannerInfo={spot} />
+          <Banner bannerInfo={spot} Icon={LocationOnRoundedIcon} />
           <div
             onClick={() => {
               props.history.push('/')
@@ -53,7 +55,6 @@ function AttractionDetail(props) {
             className="to-list-btn"
           >
             <KeyboardBackspaceSharpIcon />
-            <span>回列表</span>
           </div>
           <div className="detail-flex">
             <div className="detail-left">

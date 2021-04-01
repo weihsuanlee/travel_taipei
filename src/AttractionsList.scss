@@ -3,8 +3,16 @@
   flex-flow: row wrap;
   justify-content: center;
 }
+.map-container {
+  width: 50%;
+}
 // .attractions-list::after {
 //   content: '';
 //   flex: auto;
 //   box-sizing: border-box;
 // }
+i {
+  margin: 0 8px;
+  width: 264px;
+  margin-bottom: 32px;
+}

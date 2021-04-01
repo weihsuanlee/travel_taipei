@@ -12,9 +12,10 @@ import SkeletonList from './components/SkeletonList'
 import BasicPagination from './components/BasicPagination'
 import Container from '@material-ui/core/Container'
 import './AttractionsList.scss'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 
-function AttractionsList() {
+function AttractionsList(props) {
   const [attractions, setAttractions] = useState([])
   const [totalPage, setTotalPage] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
@@ -44,21 +45,32 @@ function AttractionsList() {
   return (
     <>
       <Container maxWidth={false} className="attractions-list-container">
-        <Banner Icon={LocationOnRoundedIcon} title="Taipei" />
+        <Banner title="Taipei" Icon={LocationOnRoundedIcon} />
+        <div
+          onClick={() => {
+            props.history.push('/watchlist')
+          }}
+          className="to-list-btn"
+        >
+          <FavoriteIcon />
+        </div>
         <Category />
-        <div className="attractions-list">
-          {isLoading ? (
-            <SkeletonList />
-          ) : (
-            <>
+        {isLoading ? (
+          <SkeletonList />
+        ) : (
+          <>
+            <div className="attractions-list">
               {attractions.map((attraction) => (
                 <Card key={attraction.id} attraction={attraction} />
               ))}
-            </>
-          )}
-        </div>
-        <BasicPagination totalPage={totalPage} />
-        <Map attractions={attractions} />
+              <i aria-hidden="true"></i>
+              <i aria-hidden="true"></i>
+              <i aria-hidden="true"></i>
+            </div>
+            <BasicPagination totalPage={totalPage} />
+            <Map attractions={attractions} />
+          </>
+        )}
       </Container>
     </>
   )
