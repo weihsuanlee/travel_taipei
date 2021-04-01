@@ -45,7 +45,7 @@ function Recommendations(props) {
                 alt=""
               />
               <div className="recommendation-align">
-                <p>{recommendation.name}</p>
+                <p>{recommendation.name.split('_').join(' ')}</p>
                 <p className="recommendation-address">
                   <LocationOnRoundedIcon />
                   <span>{recommendation.address}</span>
