@@ -17,7 +17,9 @@ function ImageSlider(props) {
   }
   console.log(sliderRef.current)
   useEffect(() => {
-    sliderRef.current.slickGoTo(0)
+    if (sliderRef.current !== undefined) {
+      sliderRef.current.slickGoTo(0)
+    }
   }, [images])
   return (
     <div className="detail-slider-wrapper">
