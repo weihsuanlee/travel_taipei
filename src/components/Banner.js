@@ -1,7 +1,7 @@
 import './Banner.scss'
 
 function Banner(props) {
-  const { title, bannerInfo, Icon } = props
+  const { title, bannerInfo, Icon, isWatchList } = props
   return (
     <>
       {/* bannerInfo 若存在 為景點詳細頁 使用景點資訊 */}
@@ -26,7 +26,17 @@ function Banner(props) {
           <div className="banner-fade-bottom"></div>
         </div>
       ) : (
-        <div className="banner">
+        <div
+          className="banner"
+          style={{
+            backgroundImage: isWatchList
+              ? `url('../../images/watchlist.jpeg')`
+              : `url(
+                '../../images/taipei.jpeg'
+              )`,
+            backgroundPosition: isWatchList ? '30% 30%' : '',
+          }}
+        >
           <div className="banner-contents">
             <h1 className="banner-title">
               <Icon />
