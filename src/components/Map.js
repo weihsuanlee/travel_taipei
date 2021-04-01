@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  MapContainer,
-  TileLayer,
-  useMap,
-  Popup,
-  Marker,
-  Tooltip,
-} from 'react-leaflet'
+import { MapContainer, TileLayer, Popup, Marker, Tooltip } from 'react-leaflet'
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 import PhoneRoundedIcon from '@material-ui/icons/PhoneRounded'
 import './Map.scss'

@@ -20,7 +20,7 @@ function AttractionDetail(props) {
   const [isLoading, setIsLoading] = useState(true)
   const { id } = useParams()
   const attractions = useSelector(selectAllAttractions)
-  console.log(id)
+  // console.log(id)
   let idNotFound = true
 
   useEffect(() => {
@@ -29,13 +29,13 @@ function AttractionDetail(props) {
       if (+attractions[i].id === +id) {
         console.log(attractions[i])
         idNotFound = false
-        console.log(idNotFound)
+        // console.log(idNotFound)
         setSpot(attractions[i])
         setIsLoading(false)
         return false
       }
       if (i === attractions.length - 1 && idNotFound) {
-        console.log('notfound')
+        // console.log('notfound')
         props.history.push('/')
       }
     }

@@ -29,7 +29,7 @@ function App() {
           const processedResponses = []
           res.map((res) => processedResponses.push(...res.data.data))
           dispatch(getAllAttractions(processedResponses))
-          console.log(processedResponses)
+          // console.log(processedResponses)
         })
       })
     }

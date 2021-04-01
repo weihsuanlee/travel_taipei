@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react'
+import { createContext, useState } from 'react'
 
 export const WatchListContext = createContext()
 
@@ -6,10 +6,9 @@ export const WatchListContextProvider = (props) => {
   const [watchList, setWatchList] = useState([])
 
   const addSpot = (spot) => {
-    // console.log(id)
     if (watchList.indexOf(spot) === -1) {
       setWatchList([spot, ...watchList])
-      console.log(spot)
+      // console.log(spot)
     } else {
       deleteSpot(spot)
     }

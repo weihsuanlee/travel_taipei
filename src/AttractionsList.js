@@ -33,7 +33,7 @@ function AttractionsList(props) {
       })
       setAttractions(response.data.data)
       setTotalPage(Math.ceil(response.data.total / 30))
-      console.log(response.data)
+      // console.log(response.data)
       return response
     }
     fetchData()
