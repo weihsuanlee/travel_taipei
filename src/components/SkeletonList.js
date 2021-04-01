@@ -3,18 +3,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Skeleton from '@material-ui/lab/Skeleton'
+import './SkeletonList.scss'
 
 const useStyles = makeStyles((theme) => ({
-  card: {
-    width: 264,
-    margin: '0 8px',
-    borderRadius: '10px',
-    marginBottom: '32px',
-    boxShadow: 'none',
-  },
-  media: {
-    height: 160,
-  },
   body: {
     padding: '16px',
   },
@@ -25,8 +16,8 @@ function SkeletionList() {
   let list = []
   for (let i = 0; i < 30; i++) {
     list.push(
-      <Card className={classes.card} key={i}>
-        <Skeleton animation="wave" variant="rect" className={classes.media} />
+      <Card className="skeleton-attraction-card" key={i}>
+        <Skeleton animation="wave" variant="rect" className="card-image" />
         <CardContent className={classes.body}>
           <Skeleton
             animation="wave"
@@ -39,7 +30,17 @@ function SkeletionList() {
       </Card>
     )
   }
-  return <>{list}</>
+  return (
+    <>
+      <div className="skeleton-cards-container">
+        {list}
+        <i aria-hidden="true"></i>
+        <i aria-hidden="true"></i>
+        <i aria-hidden="true"></i>
+      </div>
+      <Skeleton variant="rect" height={500} className="skeleton-map" />
+    </>
+  )
 }
 
 export default SkeletionList

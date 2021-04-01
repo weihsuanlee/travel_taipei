@@ -1,0 +1,33 @@
+.skeleton-map {
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.skeleton-cards-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.skeleton-attraction-card.MuiPaper-elevation1 {
+  margin: 0 8px;
+  width: 264px;
+  margin-bottom: 32px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: none;
+  .card-image {
+    max-width: 100%;
+    height: 160px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 608px) {
+  .skeleton-attraction-card.MuiPaper-elevation1 {
+    width: 90%;
+  }
+  .card-image {
+    height: 200px;
+  }
+}
