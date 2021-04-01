@@ -1,3 +1,13 @@
+:root {
+  --primary: #0088d2;
+  --primaryHover: #046fa8;
+  --secondary: #f5f5f5;
+  --darkink: #222327;
+  --light: #fff;
+  --lightHover: #f8f8f8;
+  --grey: #9b9b9b;
+}
+
 * {
   margin: 0;
 }
@@ -8,7 +18,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(245, 245, 245);
+  background-color: var(--secondary);
+  color: var(--darkink);
 }
 
 code {
@@ -16,4 +27,8 @@ code {
     monospace;
 }
 
-// ACCUPASS #0088D2
+a:-webkit-any-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
