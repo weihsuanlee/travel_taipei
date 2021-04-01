@@ -16,3 +16,8 @@ i {
   width: 264px;
   margin-bottom: 32px;
 }
+@media (max-width: 608px) {
+  i {
+    margin-bottom: 0;
+  }
+}
