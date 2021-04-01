@@ -14,8 +14,6 @@ export default function BasicPagination({ totalPage }) {
     <div className="pagination">
       <Pagination
         count={totalPage}
-        showFirstButton
-        showLastButton
         page={page}
         onChange={(event, val) => handleClick(val)}
       />

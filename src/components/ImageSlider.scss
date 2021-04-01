@@ -23,7 +23,11 @@
     }
   }
 }
-
+@media (max-width: 768px) {
+  .slick-dots li {
+    margin: 0 1px;
+  }
+}
 .detail-slider-image {
   border-radius: 10px;
   overflow: hidden;

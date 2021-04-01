@@ -5,3 +5,14 @@
     justify-content: center;
   }
 }
+@media (max-width: 400px) {
+  .pagination {
+    .MuiPaginationItem-root {
+      height: 26px;
+      margin: 0 1px;
+      padding: 0 4px;
+      min-width: 26px;
+      border-radius: 13px;
+    }
+  }
+}
