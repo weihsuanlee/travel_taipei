@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Tooltip } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Tooltip, useMap } from 'react-leaflet'
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
 import PhoneRoundedIcon from '@material-ui/icons/PhoneRounded'
 import './Location.scss'
@@ -12,9 +12,13 @@ function Location(props) {
     iconSize: [24, 24],
     popupAnchor: [0, 0],
   })
-
   L.Marker.prototype.options.icon = myIcon
   const { attraction } = props
+  function ChangeView({ center, zoom }) {
+    const map = useMap()
+    map.setView(center, zoom)
+    return null
+  }
 
   return (
     <>
@@ -24,6 +28,7 @@ function Location(props) {
         center={[attraction.nlat, attraction.elong]}
         zoom={17}
       >
+        <ChangeView center={[attraction.nlat, attraction.elong]} />
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
