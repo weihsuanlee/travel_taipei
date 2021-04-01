@@ -1,12 +1,14 @@
 import AttractionsList from './AttractionsList'
 import AttractionDetail from './AttractionDetail'
 import WatchList from './WatchList'
-import { useEffect, useState } from 'react'
+import ScrollToTop from './components/ScrollToTop'
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getAllAttractions } from './features/attractionsSlice'
 import axios from './api/axios'
 import requests from './api/requests'
+import { WatchListContextProvider } from './WatchListContext'
 
 function App() {
   const dispatch = useDispatch()
@@ -25,9 +27,7 @@ function App() {
         }
         Promise.all(apiPromises).then((res) => {
           const processedResponses = []
-          res.map((res) => {
-            processedResponses.push(...res.data.data)
-          })
+          res.map((res) => processedResponses.push(...res.data.data))
           dispatch(getAllAttractions(processedResponses))
           console.log(processedResponses)
         })
@@ -37,19 +37,23 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <AttractionsList />
-        </Route>
-        <Route exact path="/watchlist">
-          <WatchList />
-        </Route>
-        <Route path="/:id">
-          <AttractionDetail />
-        </Route>
-      </Switch>
-    </Router>
+    <WatchListContextProvider>
+      <Router>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/">
+              <AttractionsList />
+            </Route>
+            <Route exact path="/watchlist">
+              <WatchList />
+            </Route>
+            <Route path="/:id">
+              <AttractionDetail />
+            </Route>
+          </Switch>
+        </ScrollToTop>
+      </Router>
+    </WatchListContextProvider>
   )
 }
 
