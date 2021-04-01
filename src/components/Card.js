@@ -1,20 +1,28 @@
+import { useContext } from 'react'
 import './Card.scss'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded'
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
+import { WatchListContext } from '../WatchListContext'
 
 function Card(props) {
+  const { addSpot, watchList } = useContext(WatchListContext)
   const { attraction } = props
   return (
-    <div
-      className="attraction-card"
-      onClick={() => {
-        props.history.push('/' + attraction.id)
-      }}
-    >
-      <div className="add-favorite-btn">
-        <FavoriteBorderIcon />
+    <Link className="attraction-card" to={`/${attraction.id}`}>
+      <div
+        className="add-favorite-btn"
+        onClick={(e) => {
+          e.preventDefault()
+          addSpot(attraction)
+        }}
+      >
+        {watchList.indexOf(attraction) === -1 ? (
+          <FavoriteBorderIcon />
+        ) : (
+          <FavoriteRoundedIcon className="pink-heart" />
+        )}
       </div>
       <div className="card-image">
         <img
@@ -33,7 +41,7 @@ function Card(props) {
           <span>{attraction.address}</span>
         </p>
       </div>
-    </div>
+    </Link>
   )
 }
 

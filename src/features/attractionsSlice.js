@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const attractionsSlice = createSlice({
   name: 'attractions',
   initialState: {
-    categoryId: null,
+    categoryId: 0,
     page: 1,
     attractions: [],
   },
