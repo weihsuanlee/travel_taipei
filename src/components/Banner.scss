@@ -25,14 +25,7 @@
     color: var(--primary);
   }
 }
-@media (max-width: 768px) {
-  .banner-title {
-    font-size: 24px;
-    .MuiSvgIcon-root {
-      font-size: 24px;
-    }
-  }
-}
+
 .banner-fade-bottom {
   width: 100%;
   position: absolute;
@@ -45,4 +38,18 @@
     rgba(245, 245, 245, 0.9),
     rgb(245, 245, 245)
   );
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 50vh;
+  }
+  .banner-title {
+    font-size: 24px;
+    .MuiSvgIcon-root {
+      font-size: 24px;
+    }
+  }
+  .banner-fade-bottom {
+    height: 51vh;
+  }
 }
