@@ -9,17 +9,17 @@
 }
 .category-tag.MuiChip-root {
   cursor: pointer;
-  background-color: #0088d2;
+  background-color: var(--primary);
   color: white;
   &:hover {
-    background-color: #046fa8;
+    background-color: var(--primaryHover);
   }
 }
 
 .service-friendly {
   margin: 20px 0;
   border-radius: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--light);
   padding: 8px 20px 24px 20px;
 }
 

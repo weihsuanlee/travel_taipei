@@ -1,8 +1,8 @@
 .detail-info {
-  white-space: pre-line;
+  white-space: pre-wrap;
   margin: 20px 0;
   border-radius: 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--light);
   padding: 8px 20px;
 }
 
@@ -14,5 +14,39 @@
   margin-bottom: 20px;
   p {
     font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+.collapsed-intro {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+}
+#expanded {
+  display: none;
+}
+#expanded:checked + .collapsed-intro {
+  -webkit-line-clamp: unset;
+}
+#expanded:checked ~ .collapsed-toggle .MuiSvgIcon-root {
+  transform: rotate(180deg);
+}
+.collapsed-toggle {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  .MuiSvgIcon-root {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .collapsed-intro {
+    -webkit-line-clamp: unset;
+  }
+  .collapsed-toggle {
+    display: none;
   }
 }

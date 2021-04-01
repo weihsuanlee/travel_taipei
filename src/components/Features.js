@@ -40,7 +40,7 @@ function Features(props) {
         <div className="service-friendly">
           {services.length > 0 && (
             <>
-              <div className="service-title">提供設施</div>
+              <div className="service-title">服務設施</div>
               {services.map((service, i) => (
                 <div key={i} className="service-text">
                   {service.name}
@@ -50,7 +50,7 @@ function Features(props) {
           )}
           {friendly.length > 0 && (
             <>
-              <div className="service-title">友善空間</div>
+              <div className="service-title">友善認證</div>
               {friendly.map((friendly, i) => (
                 <div key={i} className="service-text">
                   {friendly.name}

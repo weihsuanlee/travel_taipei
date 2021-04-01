@@ -19,7 +19,6 @@ function Category() {
   const TabItem = (label, categoryId) => (
     <Tab
       label={label}
-      // id={`category${categoryId}`}
       onClick={() => {
         handleClick(categoryId)
       }}

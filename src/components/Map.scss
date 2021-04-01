@@ -1,6 +1,6 @@
 .map {
   height: 500px;
-  background-color: #fff;
+  background-color: var(--light);
   padding: 1rem;
   border-radius: 10px;
   margin-top: 16px;
@@ -41,7 +41,7 @@
 .popup-address {
   padding: 0 12px;
   font-size: 12px;
-  color: #9b9b9b;
+  color: var(--grey);
   overflow: hidden;
   display: flex;
   .MuiSvgIcon-root {
