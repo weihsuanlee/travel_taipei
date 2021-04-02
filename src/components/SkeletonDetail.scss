@@ -1,7 +1,14 @@
-.skeleton-banner {
+.skeleton-banner.MuiSkeleton-rect {
   margin-left: -24px;
   margin-right: -24px;
+  height: 70vh;
 }
+@media (max-width: 768px) {
+  .skeleton-banner.MuiSkeleton-rect {
+    height: 50vh;
+  }
+}
+
 .skeleton-section,
 .skeleton-location {
   border-radius: 10px;

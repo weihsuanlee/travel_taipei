@@ -15,7 +15,7 @@ function SkeletonDetail(props) {
       >
         <KeyboardBackspaceSharpIcon />
       </div>
-      <Skeleton variant="rect" height={'70vh'} className="skeleton-banner" />
+      <Skeleton variant="rect" className="skeleton-banner" />
 
       <div className="detail-flex">
         <div className="detail-left">
