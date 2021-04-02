@@ -24,6 +24,10 @@ function AttractionsList(props) {
 
   useEffect(() => {
     setIsLoading(true)
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    })
     async function fetchData() {
       const response = await axios.get(requests.fetchAllAttractions, {
         params: {
