@@ -15,9 +15,9 @@ function ImageSlider(props) {
     slidesToShow: 1,
     slidesToScroll: 1,
   }
-  console.log(sliderRef.current)
+  // console.log(sliderRef.current)
   useEffect(() => {
-    if (sliderRef.current !== undefined) {
+    if (sliderRef.current) {
       sliderRef.current.slickGoTo(0)
     }
   }, [images])

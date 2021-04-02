@@ -27,7 +27,7 @@ function AttractionDetail(props) {
     setIsLoading(true)
     for (let i = 0; i < attractions.length; i++) {
       if (+attractions[i].id === +id) {
-        console.log(attractions[i])
+        // console.log(attractions[i])
         idNotFound = false
         // console.log(idNotFound)
         setSpot(attractions[i])
