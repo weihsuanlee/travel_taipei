@@ -7,12 +7,12 @@ export const WatchListContextProvider = (props) => {
 
   const addSpot = (spot) => {
     const index = watchList.findIndex((item) => item.id === spot.id)
-    console.log(index)
+    // console.log(index)
     if (index === -1) {
       const newWatchList = [spot, ...watchList]
       setWatchList(newWatchList)
-      console.log(spot)
-      console.log(newWatchList)
+      // console.log(spot)
+      // console.log(newWatchList)
     } else {
       deleteSpot(spot)
     }
@@ -22,7 +22,7 @@ export const WatchListContextProvider = (props) => {
       return el.id !== spot.id
     })
     setWatchList(newWatchList)
-    console.log(newWatchList)
+    // console.log(newWatchList)
   }
 
   return (
