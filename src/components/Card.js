@@ -9,6 +9,7 @@ import { WatchListContext } from '../WatchListContext'
 function Card(props) {
   const { addSpot, watchList } = useContext(WatchListContext)
   const { attraction } = props
+  const index = watchList.findIndex((item) => item.id === attraction.id)
   return (
     <Link className="attraction-card" to={`/${attraction.id}`}>
       <div
@@ -18,7 +19,7 @@ function Card(props) {
           addSpot(attraction)
         }}
       >
-        {watchList.indexOf(attraction) === -1 ? (
+        {index === -1 ? (
           <FavoriteBorderIcon />
         ) : (
           <FavoriteRoundedIcon className="pink-heart" />
