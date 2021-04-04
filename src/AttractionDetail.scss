@@ -1,5 +1,5 @@
 .to-list-btn {
-  background-color: var(--light);
+  background-color: #fff;
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
@@ -15,7 +15,7 @@
     font-size: 18px;
   }
   &:hover {
-    background-color: var(--secondary);
+    background-color: #f5f5f5;
   }
 }
 .detail-flex {

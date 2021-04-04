@@ -2,7 +2,7 @@
   padding: 24px 20px;
   white-space: pre-line;
   border-radius: 10px;
-  background-color: var(--light);
+  background-color: #fff;
   margin: 20px 0;
 }
 .direction-align {
@@ -44,7 +44,7 @@
   transition: 0.3s;
   border-radius: 4px;
   &:hover {
-    background-color: var(--lightHover);
+    background-color: #f8f8f8;
   }
 }
 .direction-icon.MuiSvgIcon-root {
