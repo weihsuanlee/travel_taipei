@@ -27,10 +27,17 @@ code {
     monospace;
 }
 
-a:-webkit-any-link,
-a:-moz-any-link,
-a:any-link,
-a {
+a:-webkit-any-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:-moz-any-link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:any-link {
   color: inherit;
   cursor: pointer;
   text-decoration: none;
